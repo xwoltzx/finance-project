@@ -1,4 +1,16 @@
-package src.main.java.com.finance.stream.api.dto;
+package com.finance.stream.api.dto;
 
-public class FinanceApiDTO {
+
+import lombok.Builder;
+
+@Builder
+public record FinanceApiDTO(
+        String dailyChangePercentage,
+        String dailyChange,
+        String c,
+        String last,
+        String dailyVolume,
+        String previousDayClose,
+        String description) {
+
 }
