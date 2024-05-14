@@ -5,10 +5,12 @@
     <file url="file://$PROJECT_DIR$/../finance-event-project/microservices/microservices-demo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/app-config-data/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/common-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/finance-stream-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/infrastructure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/infrastructure/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka/kafka-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka/kafka-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka/kafka-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka/kafka-producer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka/src/main/java" charset="UTF-8" />
