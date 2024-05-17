@@ -5,10 +5,12 @@
     <file url="file://$PROJECT_DIR$/../finance-event-project/microservices/microservices-demo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/app-config-data/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/common-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/common-util/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic/elastic-client-index/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic/elastic-config/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic/elastic-index-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic/elastic-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/finance-stream-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/infrastructure/src/main/java" charset="UTF-8" />
