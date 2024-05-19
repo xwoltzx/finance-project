@@ -7,7 +7,11 @@
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/common-config/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/common-util/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic-query-service-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic-query-service-reactive/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic-query-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic-query-web-client-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic-query-web-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic/elastic-client-index/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic/elastic-config/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic/elastic-index-client/src/main/java" charset="UTF-8" />

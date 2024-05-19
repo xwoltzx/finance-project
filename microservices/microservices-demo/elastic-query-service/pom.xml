@@ -63,6 +63,10 @@
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.microservices.demo</groupId>
+            <artifactId>elastic-query-service-common</artifactId>
+        </dependency>
 
     </dependencies>
 
