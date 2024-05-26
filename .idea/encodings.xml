@@ -22,6 +22,7 @@
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/finance-stream-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/infrastructure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/infrastructure/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka-streams-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka-to-elastic-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka/kafka-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/kafka/kafka-consumer/src/main/java" charset="UTF-8" />
