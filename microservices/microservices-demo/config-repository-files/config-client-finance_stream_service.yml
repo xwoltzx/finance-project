@@ -1,8 +1,12 @@
 spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
   banner:
     location: classpath:banner.txt
 server:
-  port: 9090
+  port: 3333
 
 finance-share:
   share-list:
