@@ -3,10 +3,13 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/../finance-event-project/microservices/microservices-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../finance-event-project/microservices/microservices-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/analytics-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/app-config-data/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/common-config/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/common-util/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/microservices-demo/discovery-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic-query-service-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic-query-service-reactive/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/microservices-demo/elastic-query-service/src/main/java" charset="UTF-8" />
