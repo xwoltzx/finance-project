@@ -1,7 +1,7 @@
 package com.microservices.demo.kafka.streams.service.config;
 
-import com.microservices.demo.config.KafkaConfigData;
-import com.microservices.demo.config.KafkaStreamsConfigData;
+import com.microservices.demo.config.data.KafkaConfigData;
+import com.microservices.demo.config.data.KafkaStreamsConfigData;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.StreamsConfig;

@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/fallback")
 public class FallbackController {
 
-
     @PostMapping("/query-fallback")
-    public ResponseEntity<QueryServiceFallbackModel> queryServiceFallback() {
+    public ResponseEntity < QueryServiceFallbackModel > queryServiceFallback() {
         log.info("Returning fallback result for elastic-query-service!");
         return ResponseEntity.ok(QueryServiceFallbackModel.builder()
                 .fallbackMessage("Fallback result for elastic-query-service!")
@@ -23,21 +22,19 @@ public class FallbackController {
     }
 
     @PostMapping("/analytics-fallback")
-    public ResponseEntity<AnalyticsDataFallbackModel> analyticsServiceFallback() {
+    public ResponseEntity < AnalyticsDataFallbackModel > analyticsServiceFallback() {
         log.info("Returning fallback result for analytics-service!");
         return ResponseEntity.ok(AnalyticsDataFallbackModel.builder()
                 .shareVolume("Non Data !")
                 .build());
     }
 
-
     @PostMapping("/streams-fallback")
-    public ResponseEntity<AnalyticsDataFallbackModel> streamsServiceFallback() {
+    public ResponseEntity < AnalyticsDataFallbackModel > streamsServiceFallback() {
         log.info("Returning fallback result for kafka-streams-service!");
         return ResponseEntity.ok(AnalyticsDataFallbackModel.builder()
                 .shareVolume("Non Data !")
                 .build());
     }
-
 
 }

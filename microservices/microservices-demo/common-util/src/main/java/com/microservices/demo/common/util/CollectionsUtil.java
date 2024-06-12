@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CollectionsUtil {
 
-    private CollectionsUtil(){
+    private CollectionsUtil() {
 
     }
 
@@ -17,12 +17,10 @@ public class CollectionsUtil {
         return CollectionUtilHolder.INSTANCE;
     }
 
-    public <T> List<T> getListFromIterable(Iterable<T> iterable) {
-        List<T> list = new ArrayList<>();
+    public < T > List < T > getListFromIterable(Iterable < T > iterable) {
+        List < T > list = new ArrayList < > ();
         iterable.forEach(list::add);
         return list;
     }
-
-
 
 }

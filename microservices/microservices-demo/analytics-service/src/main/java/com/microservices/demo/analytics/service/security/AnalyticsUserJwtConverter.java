@@ -1,6 +1,5 @@
 package com.microservices.demo.analytics.service.security;
 
-
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -12,8 +11,7 @@ import org.springframework.security.oauth2.jwt.Jwt;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-public class AnalyticsUserJwtConverter implements Converter<Jwt, AbstractAuthenticationToken> {
+public class AnalyticsUserJwtConverter implements Converter < Jwt, AbstractAuthenticationToken > {
     private static final String REALM_ACCESS_CLAIM = "realm_access";
     private static final String ROLES_CLAIM = "roles";
     private static final String SCOPE_CLAIM = "scope";
@@ -30,7 +28,7 @@ public class AnalyticsUserJwtConverter implements Converter<Jwt, AbstractAuthent
 
     @Override
     public AbstractAuthenticationToken convert(Jwt jwt) {
-        Collection<GrantedAuthority> authoritiesFromJwt = getAuthoritiesFromJwt(jwt);
+        Collection < GrantedAuthority > authoritiesFromJwt = getAuthoritiesFromJwt(jwt);
         return Optional.ofNullable(
                         analyticsUserDetailsService.loadUserByUsername(jwt.getClaimAsString(USERNAME_CLAIM)))
                 .map(userDetails -> {
@@ -40,30 +38,30 @@ public class AnalyticsUserJwtConverter implements Converter<Jwt, AbstractAuthent
                 .orElseThrow(() -> new BadCredentialsException("User could not be found!"));
     }
 
-    private Collection<GrantedAuthority> getAuthoritiesFromJwt(Jwt jwt) {
+    private Collection < GrantedAuthority > getAuthoritiesFromJwt(Jwt jwt) {
         return getCombinedAuthorities(jwt).stream()
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
 
-    private Collection<String> getCombinedAuthorities(Jwt jwt) {
-        Collection<String> authorities = getRoles(jwt);
+    private Collection < String > getCombinedAuthorities(Jwt jwt) {
+        Collection < String > authorities = getRoles(jwt);
         authorities.addAll(getScopes(jwt));
         return authorities;
     }
 
     @SuppressWarnings("unchecked")
-    private Collection<String> getRoles(Jwt jwt) {
-        Object roles = ((Map<String, Object>) jwt.getClaims().get(REALM_ACCESS_CLAIM)).get(ROLES_CLAIM);
+    private Collection < String > getRoles(Jwt jwt) {
+        Object roles = ((Map < String, Object > ) jwt.getClaims().get(REALM_ACCESS_CLAIM)).get(ROLES_CLAIM);
         if (roles instanceof Collection) {
-            return ((Collection<String>) roles).stream()
+            return ((Collection < String > ) roles).stream()
                     .map(authority -> DEFAULT_ROLE_PREFIX + authority.toUpperCase())
                     .collect(Collectors.toList());
         }
         return Collections.emptyList();
     }
 
-    private Collection<String> getScopes(Jwt jwt) {
+    private Collection < String > getScopes(Jwt jwt) {
         Object scopes = jwt.getClaims().get(SCOPE_CLAIM);
         if (scopes instanceof String) {
             return Arrays.stream(((String) scopes).split(SCOPE_SEPARATOR))

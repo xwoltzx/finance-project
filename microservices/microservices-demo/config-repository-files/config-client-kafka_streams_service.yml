@@ -14,8 +14,6 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-  banner:
-    location: classpath:banner.txt
   security:
     oauth2:
       resourceserver:

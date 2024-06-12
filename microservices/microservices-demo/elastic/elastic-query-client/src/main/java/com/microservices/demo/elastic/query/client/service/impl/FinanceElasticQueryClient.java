@@ -1,7 +1,7 @@
 package com.microservices.demo.elastic.query.client.service.impl;
 
-import com.microservices.demo.config.ElasticConfigData;
-import com.microservices.demo.config.ElasticQueryConfigData;
+import com.microservices.demo.config.data.ElasticConfigData;
+import com.microservices.demo.config.data.ElasticQueryConfigData;
 import com.microservices.demo.elastic.model.index.impl.FinanceIndexModel;
 import com.microservices.demo.elastic.query.client.exception.ElasticQueryClientException;
 import com.microservices.demo.elastic.query.client.service.ElasticQueryClient;

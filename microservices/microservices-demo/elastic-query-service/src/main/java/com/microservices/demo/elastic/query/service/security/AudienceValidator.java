@@ -1,6 +1,6 @@
 package com.microservices.demo.elastic.query.service.security;
 
-import com.microservices.demo.config.ElasticQueryServiceConfigData;
+import com.microservices.demo.config.data.ElasticQueryServiceConfigData;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.oauth2.core.OAuth2Error;

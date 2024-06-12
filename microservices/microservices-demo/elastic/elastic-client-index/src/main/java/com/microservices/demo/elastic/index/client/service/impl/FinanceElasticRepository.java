@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @ConditionalOnProperty(name = "elastic-config.is-repository", havingValue = "true", matchIfMissing = true)
-public class FinanceElasticRepositoryIndexClient implements ElasticIndexClient<FinanceIndexModel> {
+public class FinanceElasticRepository implements ElasticIndexClient<FinanceIndexModel> {
 
     private final FinanceElasticsearchIndexRepository financeElasticsearchIndexRepository;
 

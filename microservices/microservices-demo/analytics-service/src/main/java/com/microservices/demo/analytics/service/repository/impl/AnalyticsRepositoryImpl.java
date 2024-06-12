@@ -14,8 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 @Slf4j
-public class AnalyticsRepositoryImpl<T extends BaseEntity<PK>, PK> implements AnalyticsCustomRepository<T, PK> {
-
+public class AnalyticsRepositoryImpl < T extends BaseEntity < PK > , PK > implements AnalyticsCustomRepository < T, PK > {
 
     @PersistenceContext
     protected EntityManager em;
@@ -23,19 +22,18 @@ public class AnalyticsRepositoryImpl<T extends BaseEntity<PK>, PK> implements An
     @Value("${spring.jpa.properties.hibernate.jdbc.batch_size:50}")
     protected int batchSize;
 
-
     @Override
     @Transactional
-    public <S extends T> PK persist(S entity) {
+    public < S extends T > PK persist(S entity) {
         this.em.persist(entity);
         return entity.getId();
     }
 
     @Override
     @Transactional
-    public <S extends T> void batchPersist(Collection<S> entities) {
+    public < S extends T > void batchPersist(Collection < S > entities) {
         if (entities.isEmpty()) {
-            log.info("No entity found to insert!");
+            log.info("No entity found to insert for persist!");
             return;
         }
         AtomicInteger batchCnt = new AtomicInteger();
@@ -56,19 +54,19 @@ public class AnalyticsRepositoryImpl<T extends BaseEntity<PK>, PK> implements An
 
     @Override
     @org.springframework.transaction.annotation.Transactional
-    public <S extends T> S merge(S entity) {
+    public < S extends T > S merge(S entity) {
         return this.em.merge(entity);
     }
 
     @Override
     @org.springframework.transaction.annotation.Transactional
-    public <S extends T> void batchMerge(Collection<S> entities) {
+    public < S extends T > void batchMerge(Collection < S > entities) {
         if (entities.isEmpty()) {
-            log.info("No entity found to insert!");
+            log.info("No entity found to insert for merge!");
             return;
         }
         int batchCnt = 0;
-        for (S entity : entities) {
+        for (S entity: entities) {
             log.trace("Merging entity with id {}", entity.getId());
             this.em.merge(entity);
             batchCnt++;

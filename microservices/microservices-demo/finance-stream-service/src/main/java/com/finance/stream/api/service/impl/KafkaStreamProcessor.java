@@ -3,7 +3,7 @@ package com.finance.stream.api.service.impl;
 import com.finance.stream.api.converter.FinanceToAvroConverter;
 import com.finance.stream.api.dto.FinanceApiDTO;
 import com.finance.stream.api.service.ProcessData;
-import com.microservices.demo.config.KafkaConfigData;
+import com.microservices.demo.config.data.KafkaConfigData;
 import com.microservices.demo.kafka.avro.model.FinanceAvroModel;
 import com.microservices.demo.kafka.producer.config.service.KafkaProducer;
 import lombok.RequiredArgsConstructor;

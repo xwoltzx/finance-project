@@ -1,7 +1,7 @@
 package com.microservices.demo.kafka.admin.client;
 
-import com.microservices.demo.config.KafkaConfigData;
-import com.microservices.demo.config.RetryConfigData;
+import com.microservices.demo.config.data.KafkaConfigData;
+import com.microservices.demo.config.data.RetryConfigData;
 import com.microservices.demo.kafka.admin.exception.KafkaClientException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

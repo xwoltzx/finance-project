@@ -17,20 +17,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FinanceAnalyticsService implements AnalyticsService {
     private final AnalyticsRepository analyticsRepository;
-    private final RedisTemplate<String, AnalyticsResponseModel> redisTemplate;
+    private final RedisTemplate < String, AnalyticsResponseModel > redisTemplate;
 
     private static final String REDIS_KEY = "SHARE_LIST";
 
     private static final String REDIS_SEPARATOR = ":";
 
-    private final RedisTemplate<String, String > redisTemplateString;
+    private final RedisTemplate < String, String > redisTemplateString;
     private final EntityToResponseModelTransformer entityToResponseModelTransformer;
     @Override
-    public List<AnalyticsResponseModel> getShareNameAnalytics(String shareName) {
+    public List < AnalyticsResponseModel > getShareNameAnalytics(String shareName) {
         log.info("Getting analytics for share name {}", shareName);
         return entityToResponseModelTransformer.getResponseModel(
-                analyticsRepository.
-                        getAnalyticsEntitiesByShareNameAndOrderByCreatedDate(shareName, PageRequest.of(0, 20))
+                analyticsRepository.getAnalyticsEntitiesByShareNameAndOrderByCreatedDate(shareName, PageRequest.of(0, 20))
                         .stream()
                         .sorted((a, b) -> b.getCreatedDate().compareTo(a.getCreatedDate()))
                         .toList());
@@ -43,11 +42,11 @@ public class FinanceAnalyticsService implements AnalyticsService {
     }
 
     @Override
-    public List<AnalyticsResponseModel> getAllCacheData() {
+    public List < AnalyticsResponseModel > getAllCacheData() {
         log.info("Getting all live data");
         String listOfShare = redisTemplateString.opsForValue().get(REDIS_KEY);
         assert listOfShare != null;
-        List<String> shareList = List.of(listOfShare.split(REDIS_SEPARATOR));
+        List < String > shareList = List.of(listOfShare.split(REDIS_SEPARATOR));
         return shareList
                 .stream()
                 .map(s -> redisTemplate.opsForValue().get(s))

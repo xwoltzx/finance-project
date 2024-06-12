@@ -9,7 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaAuditing
 @EnableDiscoveryClient
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.microservices.demo"})
+@ComponentScan(basePackages = {
+        "com.microservices.demo"
+})
 public class AnalyticsApplication {
 
     public static void main(String[] args) {

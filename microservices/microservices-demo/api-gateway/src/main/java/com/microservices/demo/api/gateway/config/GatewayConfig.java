@@ -1,7 +1,6 @@
 package com.microservices.demo.api.gateway.config;
 
-
-import com.microservices.demo.config.GatewayServiceConfigData;
+import com.microservices.demo.config.data.GatewayServiceConfigData;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.timelimiter.TimeLimiterConfig;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +30,7 @@ public class GatewayConfig {
     }
 
     @Bean
-    Customizer<ReactiveResilience4JCircuitBreakerFactory> circuitBreakerFactoryCustomizer() {
+    Customizer < ReactiveResilience4JCircuitBreakerFactory > circuitBreakerFactoryCustomizer() {
         return reactiveResilience4JCircuitBreakerFactory ->
                 reactiveResilience4JCircuitBreakerFactory.configureDefault(id -> new Resilience4JConfigBuilder(id)
                         .timeLimiterConfig(TimeLimiterConfig.custom()

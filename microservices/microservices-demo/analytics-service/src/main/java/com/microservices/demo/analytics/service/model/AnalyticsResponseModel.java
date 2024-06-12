@@ -14,8 +14,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class AnalyticsResponseModel implements Serializable {
+
     private UUID id;
     private String shareName;
     private String shareVolume;
     private Instant recordTime;
+
 }

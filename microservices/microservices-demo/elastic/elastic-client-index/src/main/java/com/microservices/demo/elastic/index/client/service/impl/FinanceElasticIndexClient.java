@@ -1,6 +1,6 @@
 package com.microservices.demo.elastic.index.client.service.impl;
 
-import com.microservices.demo.config.ElasticConfigData;
+import com.microservices.demo.config.data.ElasticConfigData;
 import com.microservices.demo.elastic.index.client.util.ElasticIndexUtil;
 import com.microservices.demo.elastic.index.client.service.ElasticIndexClient;
 import com.microservices.demo.elastic.model.index.impl.FinanceIndexModel;

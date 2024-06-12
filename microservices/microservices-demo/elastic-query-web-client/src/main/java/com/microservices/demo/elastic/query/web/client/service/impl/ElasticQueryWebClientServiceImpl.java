@@ -1,6 +1,6 @@
 package com.microservices.demo.elastic.query.web.client.service.impl;
 
-import com.microservices.demo.config.ElasticQueryWebClientConfigData;
+import com.microservices.demo.config.data.ElasticQueryWebClientConfigData;
 import com.microservices.demo.elastic.model.index.model.FinanceAvroDTO;
 import com.microservices.demo.elastic.query.web.client.common.exception.ElasticQueryWebClientException;
 import com.microservices.demo.elastic.query.web.client.common.model.ElasticQueryWebClientRequestModel;

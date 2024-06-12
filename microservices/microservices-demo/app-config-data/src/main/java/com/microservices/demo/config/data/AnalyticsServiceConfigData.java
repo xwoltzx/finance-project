@@ -1,4 +1,4 @@
-package com.microservices.demo.config;
+package com.microservices.demo.config.data;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,4 +11,3 @@ public class AnalyticsServiceConfigData {
     private String version;
     private String customAudience;
 }
-

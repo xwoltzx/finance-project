@@ -1,6 +1,6 @@
 package com.microservices.demo.elastic.query.service.security;
 
-import com.microservices.demo.elastic.query.service.converter.UserPermissionToUserDetailConverter;
+import com.microservices.demo.elastic.query.service.converter.PermissionToDetailsConverter;
 import com.microservices.demo.elastic.query.service.service.QueryUserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ public class FinanceQueryUserDetailService implements UserDetailsService {
 
     private final QueryUserService queryUserService;
 
-    private final UserPermissionToUserDetailConverter userPermissionsToUserDetailTransformer;
+    private final PermissionToDetailsConverter userPermissionsToUserDetailTransformer;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return queryUserService

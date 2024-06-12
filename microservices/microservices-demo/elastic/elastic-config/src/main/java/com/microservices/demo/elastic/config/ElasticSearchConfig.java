@@ -1,6 +1,6 @@
 package com.microservices.demo.elastic.config;
 
-import com.microservices.demo.config.ElasticConfigData;
+import com.microservices.demo.config.data.ElasticConfigData;
 import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;

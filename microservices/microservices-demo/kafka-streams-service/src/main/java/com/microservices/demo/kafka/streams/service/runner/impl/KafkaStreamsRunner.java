@@ -1,7 +1,7 @@
 package com.microservices.demo.kafka.streams.service.runner.impl;
 
-import com.microservices.demo.config.KafkaConfigData;
-import com.microservices.demo.config.KafkaStreamsConfigData;
+import com.microservices.demo.config.data.KafkaConfigData;
+import com.microservices.demo.config.data.KafkaStreamsConfigData;
 import com.microservices.demo.kafka.avro.model.FinanceAnalyticsAvroModel;
 import com.microservices.demo.kafka.avro.model.FinanceAvroModel;
 import com.microservices.demo.kafka.streams.service.runner.StreamsRunner;

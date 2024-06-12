@@ -4,7 +4,7 @@ import com.microservices.demo.analytics.service.converter.AvroToDbEntityModelTra
 import com.microservices.demo.analytics.service.converter.EntityToResponseModelTransformer;
 import com.microservices.demo.analytics.service.model.AnalyticsResponseModel;
 import com.microservices.demo.analytics.service.repository.AnalyticsRepository;
-import com.microservices.demo.config.KafkaConfigData;
+import com.microservices.demo.config.data.KafkaConfigData;
 import com.microservices.demo.kafka.admin.client.KafkaAdminClient;
 import com.microservices.demo.kafka.avro.model.FinanceAnalyticsAvroModel;
 import com.microservices.demo.kafka.consumer.config.api.KafkaConsumer;
@@ -26,7 +26,7 @@ import java.util.Objects;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class AnalyticsKafkaConsumer implements KafkaConsumer<FinanceAnalyticsAvroModel> {
+public class AnalyticsKafkaConsumer implements KafkaConsumer < FinanceAnalyticsAvroModel > {
 
     private final KafkaListenerEndpointRegistry kafkaListenerEndpointRegistry;
 
@@ -40,22 +40,22 @@ public class AnalyticsKafkaConsumer implements KafkaConsumer<FinanceAnalyticsAvr
 
     private final KafkaConfigData kafkaConfig;
 
-    private final RedisTemplate<String, AnalyticsResponseModel> redisTemplate;
+    private final RedisTemplate < String,
+            AnalyticsResponseModel > redisTemplate;
 
     @EventListener
     public void onAppStarted(ApplicationStartedEvent event) {
         kafkaAdminClient.checkTopicsCreated();
         log.info("Topics with name {} is ready for operations!", kafkaConfig.getTopicNamesToCreate().toArray());
-        Objects.requireNonNull(kafkaListenerEndpointRegistry.
-                getListenerContainer("financeAnalyticsTopicListener")).start();
+        Objects.requireNonNull(kafkaListenerEndpointRegistry.getListenerContainer("financeAnalyticsTopicListener")).start();
     }
 
     @Override
     @KafkaListener(id = "financeAnalyticsTopicListener", topics = "${kafka-config.topic-name}", autoStartup = "false")
-    public void receive(@Payload List<FinanceAnalyticsAvroModel> messages,
-                        @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) List<Long> keys,
-                        @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,
-                        @Header(KafkaHeaders.OFFSET) List<Long> offsets) {
+    public void receive(@Payload List < FinanceAnalyticsAvroModel > messages,
+                        @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) List < Long > keys,
+                        @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List < Integer > partitions,
+                        @Header(KafkaHeaders.OFFSET) List < Long > offsets) {
         var entities = avroToDbEntityModelTransformer.getEntityModel(messages);
         analyticsRepository.batchPersist(entities);
         entities.forEach(entity ->

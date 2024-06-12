@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class UserPermissionToUserDetailConverter {
+public class PermissionToDetailsConverter {
 
     public FinanceQueryUser getUserDetails(List<UserPermission> userPermissions) {
         if (userPermissions.isEmpty()) {

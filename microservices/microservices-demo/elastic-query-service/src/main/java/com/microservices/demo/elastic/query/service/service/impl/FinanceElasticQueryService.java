@@ -1,6 +1,6 @@
 package com.microservices.demo.elastic.query.service.service.impl;
 
-import com.microservices.demo.config.ElasticQueryServiceConfigData;
+import com.microservices.demo.config.data.ElasticQueryServiceConfigData;
 import com.microservices.demo.elastic.model.index.impl.FinanceIndexModel;
 import com.microservices.demo.elastic.query.client.service.ElasticQueryClient;
 import com.microservices.demo.elastic.query.service.common.model.ElasticQueryResponseModel;

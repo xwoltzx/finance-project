@@ -6,6 +6,10 @@ import com.microservices.demo.elastic.query.service.model.ElasticQueryServiceAna
 import com.microservices.demo.elastic.query.service.security.FinanceQueryUser;
 import com.microservices.demo.elastic.query.service.service.ElasticQueryService;
 import io.swagger.v3.oas.annotations.Operation;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -19,10 +23,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
-import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -52,8 +52,8 @@ public class ElasticDocumentController {
     @ResponseBody
     @PostAuthorize("hasPermission(returnObject, 'READ')")
     @GetMapping
-    public ResponseEntity<List<ElasticQueryResponseModel>> getAllDocuments(){
-        List<ElasticQueryResponseModel> response = elasticQueryService.getAllDocuments();
+    public ResponseEntity < List < ElasticQueryResponseModel >> getAllDocuments() {
+        List < ElasticQueryResponseModel > response = elasticQueryService.getAllDocuments();
         log.info("Elastic returned {} of documents", response.size());
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
@@ -79,12 +79,11 @@ public class ElasticDocumentController {
     @ResponseBody
     @PreAuthorize("hasPermission(#id,'ElasticQueryResponseModel' ,'READ')")
     @GetMapping("/{id}")
-    public ResponseEntity<ElasticQueryResponseModel> getDocumentsById(@PathVariable @NotNull @Validated String id){
-        ElasticQueryResponseModel elasticQueryServiceResponseModel =elasticQueryService.getDocumentById(id);
+    public ResponseEntity < ElasticQueryResponseModel > getDocumentsById(@PathVariable @NotNull @Validated String id) {
+        ElasticQueryResponseModel elasticQueryServiceResponseModel = elasticQueryService.getDocumentById(id);
         log.debug("Elasticsearch returned document with id {}", id);
         return ResponseEntity.ok(elasticQueryServiceResponseModel);
     }
-
 
     @PreAuthorize("hasRole('APP_USER_ROLE') || hasRole('APP_SUPER_USER_ROLE') || hasAuthority('SCOPE_APP_USER_ROLE')")
     @PostAuthorize("hasPermission(returnObject, 'READ')")
@@ -100,11 +99,10 @@ public class ElasticDocumentController {
     })
     @PostMapping("/get-document-by-text")
     public @ResponseBody
-    ResponseEntity<ElasticQueryServiceAnalyticsResponseModel>
+    ResponseEntity < ElasticQueryServiceAnalyticsResponseModel >
     getDocumentByText(@RequestBody @Valid ElasticQueryRequestModel elasticQueryServiceRequestModel,
                       @AuthenticationPrincipal FinanceQueryUser principal,
-                      @RegisteredOAuth2AuthorizedClient("keycloak")
-                      OAuth2AuthorizedClient oAuth2AuthorizedClient) {
+                      @RegisteredOAuth2AuthorizedClient("keycloak") OAuth2AuthorizedClient oAuth2AuthorizedClient) {
         log.info("User {} querying documents for text {}", principal.getUsername(),
                 elasticQueryServiceRequestModel.getShareData().getC());
         ElasticQueryServiceAnalyticsResponseModel response =

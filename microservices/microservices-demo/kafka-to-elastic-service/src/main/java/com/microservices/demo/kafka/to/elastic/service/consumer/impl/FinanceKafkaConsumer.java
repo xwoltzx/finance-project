@@ -1,7 +1,7 @@
 package com.microservices.demo.kafka.to.elastic.service.consumer.impl;
 
-import com.microservices.demo.config.KafkaConfigData;
-import com.microservices.demo.config.KafkaConsumerConfigData;
+import com.microservices.demo.config.data.KafkaConfigData;
+import com.microservices.demo.config.data.KafkaConsumerConfigData;
 import com.microservices.demo.elastic.index.client.service.ElasticIndexClient;
 import com.microservices.demo.elastic.model.index.impl.FinanceIndexModel;
 import com.microservices.demo.kafka.admin.client.KafkaAdminClient;

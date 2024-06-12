@@ -2,7 +2,7 @@ package com.finance.stream.api.scheduler;
 
 import com.finance.stream.api.client.FinanceService;
 import com.finance.stream.api.service.ProcessData;
-import com.microservices.demo.config.FinanceDataStreamConfig;
+import com.microservices.demo.config.data.FinanceDataStreamConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;

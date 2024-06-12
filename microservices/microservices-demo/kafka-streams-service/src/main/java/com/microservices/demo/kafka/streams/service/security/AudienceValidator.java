@@ -1,6 +1,6 @@
 package com.microservices.demo.kafka.streams.service.security;
 
-import com.microservices.demo.config.KafkaStreamsServiceConfigData;
+import com.microservices.demo.config.data.KafkaStreamsServiceConfigData;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.core.OAuth2TokenValidator;

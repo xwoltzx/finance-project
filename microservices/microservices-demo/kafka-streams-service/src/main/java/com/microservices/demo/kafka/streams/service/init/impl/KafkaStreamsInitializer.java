@@ -1,6 +1,6 @@
 package com.microservices.demo.kafka.streams.service.init.impl;
 
-import com.microservices.demo.config.KafkaConfigData;
+import com.microservices.demo.config.data.KafkaConfigData;
 import com.microservices.demo.kafka.admin.client.KafkaAdminClient;
 import com.microservices.demo.kafka.streams.service.init.StreamsInitializer;
 import org.slf4j.Logger;

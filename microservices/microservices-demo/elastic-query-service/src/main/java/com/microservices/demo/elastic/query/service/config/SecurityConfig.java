@@ -19,7 +19,6 @@ import org.springframework.security.oauth2.core.DelegatingOAuth2TokenValidator;
 import org.springframework.security.oauth2.core.OAuth2TokenValidator;
 import org.springframework.security.oauth2.jwt.*;
 
-
 @Configuration
 @RequiredArgsConstructor
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -50,17 +49,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    JwtDecoder jwtDecoder(@Qualifier("elastic-query-service-audience-validator")
-                          OAuth2TokenValidator<Jwt> audienceValidator) {
+    JwtDecoder jwtDecoder(@Qualifier("elastic-query-service-audience-validator") OAuth2TokenValidator < Jwt > audienceValidator) {
         NimbusJwtDecoder jwtDecoder = (NimbusJwtDecoder) JwtDecoders.fromOidcIssuerLocation(
                 oAuth2ResourceServerProperties.getJwt().getIssuerUri());
-        OAuth2TokenValidator<Jwt> withIssuer = JwtValidators.createDefaultWithIssuer
-                (oAuth2ResourceServerProperties.getJwt().getIssuerUri());
-        OAuth2TokenValidator<Jwt> withAudience = new DelegatingOAuth2TokenValidator<>(withIssuer, audienceValidator);
+        OAuth2TokenValidator < Jwt > withIssuer = JwtValidators.createDefaultWithIssuer(oAuth2ResourceServerProperties.getJwt().getIssuerUri());
+        OAuth2TokenValidator < Jwt > withAudience = new DelegatingOAuth2TokenValidator < > (withIssuer, audienceValidator);
         jwtDecoder.setJwtValidator(withAudience);
         return jwtDecoder;
     }
-
 
     @Override
     public void configure(WebSecurity webSecurity) {
@@ -70,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    Converter<Jwt, ? extends AbstractAuthenticationToken> financeQueryUserJwtConverter() {
+    Converter < Jwt, ? extends AbstractAuthenticationToken > financeQueryUserJwtConverter() {
         return new FinanceQueryUserJwtConverter(financeQueryUserDetailService);
     }
 

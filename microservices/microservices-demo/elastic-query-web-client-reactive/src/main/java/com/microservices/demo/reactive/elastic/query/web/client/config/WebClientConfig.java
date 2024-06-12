@@ -1,6 +1,6 @@
 package com.microservices.demo.reactive.elastic.query.web.client.config;
 
-import com.microservices.demo.config.ElasticQueryWebClientConfigData;
+import com.microservices.demo.config.data.ElasticQueryWebClientConfigData;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;

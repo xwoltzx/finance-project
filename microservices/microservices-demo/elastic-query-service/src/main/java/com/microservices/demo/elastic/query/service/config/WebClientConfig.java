@@ -1,7 +1,7 @@
 package com.microservices.demo.elastic.query.service.config;
 
 
-import com.microservices.demo.config.ElasticQueryServiceConfigData;
+import com.microservices.demo.config.data.ElasticQueryServiceConfigData;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
