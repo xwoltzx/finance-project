@@ -16,8 +16,6 @@ public class FinanceStreamScheduler {
     private final FinanceDataStreamConfig financeDataStreamConfig;
     private final ProcessData processData;
 
-    //    @Scheduled( cron = "0/20 * 10-18  * * MON-FRI",
-//                zone = "Europe/Istanbul")
     @Scheduled(fixedDelay = 20000)
     public void getBistInformation() {
         financeDataStreamConfig
@@ -33,7 +31,7 @@ public class FinanceStreamScheduler {
                     }
 
                     try {
-                        processData.processData(bistShare);
+                        processData.processOnData(bistShare);
                         Thread.sleep(500);
                     } catch (Exception e) {
                         log.error("Error in interrupted or processing data with kafka: {}",  e.getMessage());

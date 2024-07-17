@@ -27,7 +27,7 @@ public class MDCHandlerInterceptor implements HandlerInterceptor {
         if (!StringUtils.isEmpty(correlationId)) {
             MDC.put(Constants.CORRELATION_ID_KEY, correlationId);
         } else {
-            MDC.put(Constants.CORRELATION_ID_KEY, getNewCorrelationId());
+            MDC.put(Constants.CORRELATION_ID_KEY, getNewId());
         }
         return true;
     }
@@ -40,7 +40,7 @@ public class MDCHandlerInterceptor implements HandlerInterceptor {
         MDC.remove(Constants.CORRELATION_ID_KEY);
     }
 
-    private String getNewCorrelationId() {
+    private String getNewId() {
         return idGenerator.generateId().toString();
     }
 }

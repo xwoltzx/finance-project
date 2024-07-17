@@ -18,7 +18,7 @@ spring:
           default-label: main
       fail-fast: true
 server:
-  port: 8888
+  port: 8000
 logging:
   level:
     ROOT: INFO

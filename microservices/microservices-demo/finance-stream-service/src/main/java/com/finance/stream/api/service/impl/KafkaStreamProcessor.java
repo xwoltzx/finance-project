@@ -22,7 +22,7 @@ public class KafkaStreamProcessor implements ProcessData {
     private final FinanceToAvroConverter financeToAvroConverter;
 
     @Override
-    public void processData(List<FinanceApiDTO> financeApiDTOs) {
+    public void processOnData(List<FinanceApiDTO> financeApiDTOs) {
 
         var financeAvroModel =
                 financeToAvroConverter.getFinanceAvroModel(financeApiDTOs.get(0));

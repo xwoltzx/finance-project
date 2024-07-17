@@ -38,15 +38,15 @@ public class KafkaAdminClient {
     public void createTopics(){
         CreateTopicsResult createTopicsResult;
         try {
-            createTopicsResult = retryTemplate.execute(this::doCreateTopics);
+            createTopicsResult = retryTemplate.execute(this::makeCreateTopics);
         }catch (Throwable e){
             log.error("Error creating topics", e);
             throw new KafkaClientException("Reached max number of retries");
         }
-        checkTopicsCreated();
+        checkIfTopicsCreated();
     }
 
-    private CreateTopicsResult doCreateTopics(RetryContext retryContext) {
+    private CreateTopicsResult makeCreateTopics(RetryContext retryContext) {
         var topicNames = kafkaConfigData.getTopicNamesToCreate();
         log.info("Creating topics {}", topicNames);
         var newTopics = topicNames.stream()
@@ -80,7 +80,7 @@ public class KafkaAdminClient {
         return topics;
     }
 
-    public void checkTopicsCreated(){
+    public void checkIfTopicsCreated(){
 
         AtomicReference<Collection<TopicListing>> topics = new AtomicReference<>(getTopics());
         AtomicInteger retryCount = new AtomicInteger(1);
@@ -91,7 +91,7 @@ public class KafkaAdminClient {
                 topic -> {
                     while (!isTopicCreated(topics,topic)){
                         checkMaxRetry(retryCount.getAndIncrement(), maxRetry);
-                        sleep(sleepTime);
+                        sleepOn(sleepTime);
                         sleepTime.updateAndGet(v -> v * multiplier);
                         topics.set(getTopics());
                     }
@@ -100,14 +100,14 @@ public class KafkaAdminClient {
 
     }
 
-    public void checkSchemaRegistry(){
+    public void checkIsSchemaRegistry(){
         AtomicInteger retryCount = new AtomicInteger(1);
         Integer maxRetry = retryConfigData.getMaxAttempts();
         Integer multiplier = retryConfigData.getMultiplier().intValue();
         AtomicReference<Long> sleepTime = new AtomicReference<>(retryConfigData.getInitialIntervalMs());
         while (!isSchemaRegistryAvailable().is2xxSuccessful()){
             checkMaxRetry(retryCount.getAndIncrement(), maxRetry);
-            sleep(sleepTime);
+            sleepOn(sleepTime);
             sleepTime.updateAndGet(v -> v * multiplier);
         }
     }
@@ -129,17 +129,17 @@ public class KafkaAdminClient {
         }
     }
 
-    private void sleep(AtomicReference<Long> sleepTime) {
+    private void sleepOn(AtomicReference<Long> sleepTime) {
         try {
             Thread.sleep(sleepTime.get());
         }catch (InterruptedException e){
-            log.error("Error sleeping", e);
+            log.error("Error by sleeping", e);
         }
     }
 
     private void checkMaxRetry(int retry, Integer maxRetry) {
         if (retry>maxRetry){
-            throw new KafkaClientException("Reached max number of retries");
+            throw new KafkaClientException("Reached max retries");
         }
     }
 

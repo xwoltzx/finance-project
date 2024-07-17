@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(value = "finance-stream-service",
-        url = "https://www.isyatirim.com.tr/_layouts/15/Isyatirim.Website/Common/Data.aspx/OneEndeks?endeks=")
+@FeignClient(value = "finance-stream-service")
 public interface FinanceService {
 
     @GetMapping

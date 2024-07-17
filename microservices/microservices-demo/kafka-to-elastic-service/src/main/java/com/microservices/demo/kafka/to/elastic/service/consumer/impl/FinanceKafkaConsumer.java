@@ -40,26 +40,10 @@ public class FinanceKafkaConsumer implements KafkaConsumer<String , FinanceAvroM
                         @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) List<String> keys,
                         @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,
                         @Header(KafkaHeaders.OFFSET) List<Long> offsets) {
-        log.info("{} number of message received with keys {}, partitions {} and offsets {}, " +
-                 "sending it to elastic: Thread id {}",
-                messages.size(),
-                keys.toString(),
-                partitions.toString(),
-                offsets.toString(),
-                Thread.currentThread().getId());
-
         var financeIndexModels = avroToElasticConverter.getElasticModels(messages);
         var savingIndex = elasticIndexClient.save(financeIndexModels);
         log.info("Documents saved to elasticsearch with ids {}",savingIndex.toString());
     }
-
-//    @EventListener
-//    public void onAppStarted(ApplicationStartedEvent event) {
-//        kafkaAdminClient.checkTopicsCreated();
-//        log.info("Topics with name {} is ready for operations!", kafkaConfigData.getTopicNamesToCreate().toArray());
-//        Objects.requireNonNull(kafkaListenerEndpointRegistry
-//                .getListenerContainer(kafkaConsumerConfigData.getConsumerGroupId())).start();
-//    }
 
 }
 

@@ -8,7 +8,7 @@ elastic-query-web-client:
     connect-timeout-ms: 10000
     read-timeout-ms: 10000
     write-timeout-ms: 10000
-    max-in-memory-size: 10485760 # 10MB
+    max-in-memory-size: 10485760
     content-type: 'application/json'
     accept-type: 'application/json'
     base-url: 'http://elastic-query-service-1:8183/elastic-query-service/documents'

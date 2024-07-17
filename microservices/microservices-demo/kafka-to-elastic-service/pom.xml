@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>microservices-demo</artifactId>
-        <groupId>com.microservices.demo</groupId>
+        <artifactId>finance-demo</artifactId>
+        <groupId>com.finance.demo</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>kafka-to-elastic-service</artifactId>
+    <artifactId>kafka-elastic-service</artifactId>
 
     <dependencies>
         <dependency>
@@ -28,19 +28,21 @@
         </dependency>
 
         <dependency>
-            <groupId>com.microservices.demo</groupId>
+            <groupId>com.finance.demo</groupId>
             <artifactId>kafka-consumer</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.microservices.demo</groupId>
+            <groupId>com.finance.demo</groupId>
             <artifactId>kafka-admin</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.microservices.demo</groupId>
+            <groupId>com.finance.demo</groupId>
             <artifactId>kafka-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -68,7 +70,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.microservices.demo</groupId>
+            <groupId>com.finance.demo</groupId>
             <artifactId>elastic-config</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
@@ -78,12 +80,12 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.microservices.demo</groupId>
+            <groupId>com.finance.demo</groupId>
             <artifactId>elastic-model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.microservices.demo</groupId>
+            <groupId>com.finance.demo</groupId>
             <artifactId>elastic-client-index</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

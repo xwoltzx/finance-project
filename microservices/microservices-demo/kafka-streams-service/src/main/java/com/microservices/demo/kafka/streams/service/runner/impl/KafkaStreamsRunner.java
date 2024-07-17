@@ -36,7 +36,7 @@ public class KafkaStreamsRunner implements StreamsRunner<String, Long> {
 
     private KafkaStreams kafkaStreams;
 
-    private HashMap<String, String> liveShareValues = new HashMap<>();
+    private final HashMap<String, String> liveShareValues = new HashMap<>();
 
 
 

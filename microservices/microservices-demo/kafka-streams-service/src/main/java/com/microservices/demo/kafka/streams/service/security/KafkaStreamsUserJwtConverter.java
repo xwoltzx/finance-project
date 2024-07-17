@@ -8,11 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.microservices.demo.kafka.streams.service.Constants.NA;
@@ -46,12 +42,12 @@ public class KafkaStreamsUserJwtConverter implements Converter<Jwt, AbstractAuth
     }
 
     private Collection<GrantedAuthority> getAuthoritiesFromJwt(Jwt jwt) {
-        return getCombinedAuthorities(jwt).stream()
+        return getCombinedAuthoritiesFromJwt(jwt).stream()
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
 
-    private Collection<String> getCombinedAuthorities(Jwt jwt) {
+    private Collection<String> getCombinedAuthoritiesFromJwt(Jwt jwt) {
         Collection<String> authorities = getRoles(jwt);
         authorities.addAll(getScopes(jwt));
         return authorities;

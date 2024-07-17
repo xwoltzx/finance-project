@@ -6,13 +6,13 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
-    <groupId>com.microservices.demo</groupId>
-    <artifactId>microservices-demo</artifactId>
+    <groupId>com.finance.demo</groupId>
+    <artifactId>finance-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservices-demo</name>
-    <description>microservices-demo</description>
+    <name>finance-demo</name>
+    <description>finance-demo</description>
 
     <modules>
         <module>finance-stream-service</module>
@@ -123,19 +123,19 @@
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>elastic-query-service-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
-                <artifactId>mdc-interceptor</artifactId>
+                <groupId>com.finance.demo</groupId>
+                <artifactId>interceptor-mdc</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>elastic-query-web-client-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -161,20 +161,20 @@
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>elastic-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>common-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>elastic-query-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -187,13 +187,13 @@
 
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>elastic-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>elastic-index-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -210,13 +210,13 @@
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>kafka-consumer</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>app-config-data</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -228,7 +228,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>common-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -252,19 +252,19 @@
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>kafka-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>kafka-producer</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.microservices.demo</groupId>
+                <groupId>com.finance.demo</groupId>
                 <artifactId>kafka-admin</artifactId>
                 <version>${project.version}</version>
             </dependency>

@@ -17,7 +17,7 @@ public class KafkaStreamInitializer implements StreamInitializer {
     public void init() {
         log.info("Initializing Kafka Stream");
         kafkaAdminClient.createTopics();
-        kafkaAdminClient.checkSchemaRegistry();
+        kafkaAdminClient.checkIsSchemaRegistry();
         log.info("Kafka Stream initialized");
     }
 }

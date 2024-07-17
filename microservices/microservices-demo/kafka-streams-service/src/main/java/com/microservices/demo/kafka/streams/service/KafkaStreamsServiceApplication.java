@@ -30,7 +30,7 @@ public class KafkaStreamsServiceApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        log.info("App starts...");
+        log.info("Application starts...");
         streamsInitializer.init();
         streamsRunner.start();
     }

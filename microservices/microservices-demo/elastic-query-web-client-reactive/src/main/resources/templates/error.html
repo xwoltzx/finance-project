@@ -1,12 +1,11 @@
-<div th:replace="header"></div>
+<div th:replace="header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
 
 <div class="container">
-    <h1>Query Client</h1>
+    <h1>Client Query</h1>
     <div class="jumbotron">
         <h2>An error occurred</h2>
         <ul>
-            <li th:text="'Error:' + ${error}"></li>
-            <li th:text="${error_description}"></li>
+            <li th:text="'Error ' + ${error} + ' ' + ${error_description}"></li>
         </ul>
         <a class="btn btn-primary" href="#" role="button" th:href="@{/}">Main page</a>
     </div>

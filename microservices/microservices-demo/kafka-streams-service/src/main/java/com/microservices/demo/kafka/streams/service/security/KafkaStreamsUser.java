@@ -2,6 +2,7 @@ package com.microservices.demo.kafka.streams.service.security;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,11 +17,8 @@ public class KafkaStreamsUser implements UserDetails {
 
     private String username;
 
+    @Setter
     private Collection<? extends GrantedAuthority> authorities;
-
-    public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
-        this.authorities = authorities;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

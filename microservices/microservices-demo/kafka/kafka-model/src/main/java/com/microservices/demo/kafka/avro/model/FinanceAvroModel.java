@@ -5,15 +5,16 @@
  */
 package com.microservices.demo.kafka.avro.model;
 
-import org.apache.avro.generic.GenericArray;
-import org.apache.avro.specific.SpecificData;
-import org.apache.avro.util.Utf8;
-import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
+import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.SchemaStore;
+import org.apache.avro.specific.SpecificData;
+
+import java.io.Serial;
 
 @org.apache.avro.specific.AvroGenerated
 public class FinanceAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  @Serial
   private static final long serialVersionUID = 6069870114155554710L;
 
 

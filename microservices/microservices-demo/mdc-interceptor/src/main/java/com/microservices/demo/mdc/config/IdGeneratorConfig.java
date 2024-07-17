@@ -9,7 +9,7 @@ import org.springframework.util.JdkIdGenerator;
 public class IdGeneratorConfig {
 
     @Bean
-    public IdGenerator idGenerator() {
+    public IdGenerator idJdkGenerator() {
         return new JdkIdGenerator();
     }
 }

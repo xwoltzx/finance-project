@@ -30,7 +30,7 @@ class FinanceStreamAppTests {
     @Test
     void testKafka() {
 
-        doNothing().when(kafkaAdminClient).checkSchemaRegistry();
+        doNothing().when(kafkaAdminClient).checkIsSchemaRegistry();
 
         FinanceAvroModel financeAvroModel = FinanceAvroModel.newBuilder()
                 .setId("74772abc-0a62-47ca-9210-24437c26a6c1")

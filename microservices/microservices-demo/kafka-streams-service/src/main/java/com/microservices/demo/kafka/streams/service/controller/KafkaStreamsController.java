@@ -19,7 +19,7 @@ public class KafkaStreamsController {
 
     private final StreamsRunner<String, Long> streamsRunner;
 
-    @GetMapping("/share-streams/{shareName}")
+    @GetMapping("/share-on-streams/{shareName}")
     @ResponseBody
     public ResponseEntity<KafkaStreamsResponseModel> getShareStreams(@PathVariable @NotEmpty String shareName) {
         var response = streamsRunner.getValueByKey (shareName);

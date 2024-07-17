@@ -45,7 +45,7 @@ public class AnalyticsKafkaConsumer implements KafkaConsumer < FinanceAnalyticsA
 
     @EventListener
     public void onAppStarted(ApplicationStartedEvent event) {
-        kafkaAdminClient.checkTopicsCreated();
+        kafkaAdminClient.checkIfTopicsCreated();
         log.info("Topics with name {} is ready for operations!", kafkaConfig.getTopicNamesToCreate().toArray());
         Objects.requireNonNull(kafkaListenerEndpointRegistry.getListenerContainer("financeAnalyticsTopicListener")).start();
     }
