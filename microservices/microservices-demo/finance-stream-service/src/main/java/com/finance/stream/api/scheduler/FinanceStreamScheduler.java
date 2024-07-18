@@ -17,21 +17,21 @@ public class FinanceStreamScheduler {
     private final ProcessData processData;
 
     @Scheduled(fixedDelay = 20000)
-    public void getBistInformation() {
+    public void getMOEXInformation() {
         financeDataStreamConfig
                 .getShareList()
-                .forEach(bist ->
+                .forEach(moex ->
                 {
-                    var endeksUrl = bist.concat(financeDataStreamConfig.getUrlAppend());
-                    var bistShare = financeService.getBISTInformation(endeksUrl);
+                    var endeksUrl = moex.concat(financeDataStreamConfig.getUrlAppend());
+                    var moexShare = financeService.getMOEXInformation(endeksUrl);
 
-                    if (bistShare.isEmpty()){
-                        log.error("Error on getting information... Try later !");
-                        throw new RuntimeException("Error on getting information... Try later !");
+                    if (moexShare.isEmpty()){
+                        log.error("Error on getting information");
+                        throw new RuntimeException("Error on getting information");
                     }
 
                     try {
-                        processData.processOnData(bistShare);
+                        processData.processOnData(moexShare);
                         Thread.sleep(500);
                     } catch (Exception e) {
                         log.error("Error in interrupted or processing data with kafka: {}",  e.getMessage());

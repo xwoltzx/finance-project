@@ -14,7 +14,7 @@ finance-share:
     - SISE
     - ANGEN
     - EREGL
-  url-append: .E.BIST
+  url-append: .E.MOEX
 
 retry-config:
   initial-interval-ms: 1000

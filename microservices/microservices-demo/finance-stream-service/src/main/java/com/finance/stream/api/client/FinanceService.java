@@ -11,5 +11,5 @@ import java.util.List;
 public interface FinanceService {
 
     @GetMapping
-    List<FinanceApiDTO> getBISTInformation(@RequestParam String endeks);
+    List<FinanceApiDTO> getMOEXInformation(@RequestParam String index);
 }

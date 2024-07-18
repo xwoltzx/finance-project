@@ -77,7 +77,7 @@ user-config:
   roles: "USER"
 
 elastic-config:
-  index-name: bist-index
+  index-name: moex-index
   connection-url: http://localhost:9200
   connect-timeout-ms: 5000
   socket-timeout-ms: 30000

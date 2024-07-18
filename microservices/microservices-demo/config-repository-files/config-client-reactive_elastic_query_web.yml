@@ -16,8 +16,6 @@ server:
   port: 8184
 
 spring:
-  banner:
-    location: classpath:banner.txt
   webflux:
     base-path: /reactive-elastic-query-web-client
   thymeleaf:

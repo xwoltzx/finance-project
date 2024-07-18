@@ -36,7 +36,7 @@ retry-config:
   sleep-time-ms: 2000
 
 elastic-config:
-  index-name: bist-index
+  index-name: moex-index
   connection-url: http://elastic-1:9200
   connect-timeout-ms: 5000
   socket-timeout-ms: 30000
@@ -47,5 +47,3 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-  banner:
-    location: classpath:banner.txt
