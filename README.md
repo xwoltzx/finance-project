@@ -3,18 +3,17 @@
 
 Используемые технологии:
 
-Java 17
-Intellij
-Maven
-Git
-Docker
-Spring Cloud Gateway
-Docker Redis
-resilience4j
-Netflix Eureka
-Keycloak
-Oauth2, OpenID Connect
-Kafka Avro
-Elasticsearch
-HATEOAS
-Prometheus
+-Java 17
+-Maven
+-Git
+-Docker
+-Spring Cloud Gateway
+-Docker Redis
+-resilience4j
+-Netflix Eureka
+-Keycloak
+-Oauth2, OpenID Connect
+-Kafka Avro
+-Elasticsearch
+-HATEOAS
+-Prometheus
